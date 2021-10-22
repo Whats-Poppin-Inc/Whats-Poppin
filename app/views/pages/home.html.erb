@@ -1,4 +1,10 @@
-<div class = "container">
-    <h1 class = "text-center">Please Login</h1>
-    <%= link_to "Login",  new_user_session_path %>
+<div class = "container text-center">
+    <h1>What's Poppin?</h1>
+    <%if user_signed_in? %>
+        <%=link_to "Talk Page", pages_talk_path%>
+        <%=link_to "Log Out",  destroy_user_session_path%>
+    <%else%>
+        <%= link_to "Login",  new_user_session_path %>
+        <%= link_to "Register", new_user_registration_path %>
+    <%end%>
 </div>
